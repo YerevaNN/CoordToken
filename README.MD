@@ -25,6 +25,32 @@ This changes the activation from `torch.sigmoid` to `torch.tanh` in the symmetry
 - Training: Adjust and run `submit_train.sh` or `python submit_train.py`.
 - Evaluation: Adjust and run `python submit_eval.py --ckpt <checkpoint_path>`.
 
+## Downloads
+
+Authenticate with Hugging Face:
+
+```bash
+hf auth login
+```
+
+Download the tokenizer checkpoint into the repo root:
+
+```bash
+hf download FilyaGeikyan/CoordToken tokenizer.ckpt --repo-type model --local-dir .
+```
+
+Download the training dataset:
+
+```bash
+hf download FilyaGeikyan/CoordToken-data merged_train.csv.zst --repo-type dataset --local-dir .
+```
+
+Run evaluation with the downloaded checkpoint:
+
+```bash
+python submit_eval.py --ckpt tokenizer.ckpt
+```
+
 ## Notes
 
 - Adjust file paths (e.g., data directories, logs) for your environment.
