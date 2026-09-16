@@ -1,0 +1,7 @@
+metric,count
+train_unique_smiles,89886933
+val_unique_smiles,626575
+test_unique_smiles,512876
+train_val_overlap,0
+train_test_overlap,0
+val_test_overlap,0

@@ -53,5 +53,7 @@ python submit_eval.py --ckpt tokenizer.ckpt
 
 ## Notes
 
+- Data collection, filtering, run evidence, and snapshot replay instructions are in [data_collection/README.md](data_collection/README.md).
+
 - Adjust file paths (e.g., data directories, logs) for your environment.
 - Ensure CUDA/GPU availability for training.
