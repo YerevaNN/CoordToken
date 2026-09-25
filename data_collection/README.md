@@ -8,6 +8,15 @@ records **190,214,248 training rows**. The original output was
 The published `merged_train.csv.zst` is **already filtered**. It is the final
 training artifact, not an input to the filtering pipeline.
 
+## New InChIKey cleaning revision
+
+For the full Standard InChIKey audits, non-destructive filter, tests, completed
+nabla correction evidence, and planned global release, see
+[INCHIKEY_CLEANING.md](INCHIKEY_CLEANING.md).
+[Manuscript changes and methods wording](FILTERING_METHODS.md) distinguish
+completed filtering from pending release checks. These tools revise the existing
+merged corpus; they do not reconstruct unavailable historical source snapshots.
+
 ## Main scripts for review
 
 | Task | Recovered implementation |
