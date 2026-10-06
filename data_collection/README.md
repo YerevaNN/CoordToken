@@ -17,6 +17,8 @@ molecular overlap exception. Group A remains provisional until newly selected
 Group B/C holdouts are applied globally.
 The next stage is [iterative Group B splitting](group_b_split/README.md), with
 whole-InChIKey assignment and automatic index-to-split job dependencies.
+The [final nabla step](group_c_split/README.md) fills validation only with keys
+absent from retained Group A/B training and verifies the combined molecular split.
 
 For the full Standard InChIKey audits, non-destructive filter, tests, completed
 nabla correction evidence, and planned global release, see
