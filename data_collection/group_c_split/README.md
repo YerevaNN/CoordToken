@@ -57,3 +57,23 @@ Outputs include `selection.json`, `validation_keys.json`, the complete per-key
 to all 59 A/B/C split files and the separate GEOM-revisited reference. It records
 the conformation-test exception. No exact-sample deduplication or merged training
 CSV is implied by completion of this molecular splitting step.
+
+## Completed run: 2026-10-06
+
+Job 314145 completed successfully in 4 minutes 56 seconds (controller: 294.4
+seconds). Nabla contains 8,689,383 training rows and 63,340 validation rows;
+5,156 training-pool rows were excluded for protected-test overlap. Validation
+contains 29,684 existing-validation matches and 33,656 additional rows whose
+keys are absent from all retained Group A/B training sets. Whole molecular
+groups exceeded the 63,325-row target by 15 rows. No A/B training rows were
+removed, and all three nabla tests were preserved.
+
+All required molecular separation checks passed, with only the documented
+conformation-test exception. Validation was reparsed from the new CSV;
+training checks used indexed keys and assignments. All 54 A/B output hashes
+were reverified, extending the prior independent holdout audit.
+
+See [completion evidence](evidence/group_c_20261006.json) and the
+[paper methods revision](../paper_dataset_split_revision.tex). The combined
+manifest is recorded in the evidence. This completion covers molecular splits;
+exact-sample deduplication and a merged release are separate steps.
