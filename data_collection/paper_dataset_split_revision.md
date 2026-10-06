@@ -2,7 +2,7 @@
 
 We group datasets into three categories. **Group A** contains datasets with predefined splits: {BindingMOAD, BindingNet-High, BindingNet-Low, BindingNet-Mid, CrossDocked2020, DAVIS-3D, HiQBind, Kinodata-3D, OMol25-bio-mols, Plinder, SAIR, SPINDR, ChEMBL3D, GEOM}. **Group B** contains datasets without predefined splits: {KIBA-3D, OMol25-small-mols, ZINC, PubChem3D}. **Group C** contains {∇²DFT}, for which only three test sets are predefined: *test conformations*, *test scaffolds*, and *test structures*.
 
-We first processed Group A. We computed full Standard InChIKeys from decoded molecular strings and aggregated keys from all available Group A test sets, the ∇²DFT *test scaffolds* and *test structures* sets, and the GEOM-Revisited test split. We then removed from all training and validation sets samples whose InChIKeys overlapped with this aggregated test list. Next, if a training split contained InChIKeys appearing in the remaining validation sets, those samples were removed from training. We reserved the GEOM-Revisited test set in this way to keep it available for possible future evaluation.
+We first processed Group A. We computed full Standard InChIKeys from decoded molecular strings and aggregated keys from all available Group A test sets, the ∇²DFT *test scaffolds* and *test structures* sets, and the GEOM-Revisited test split. We then removed from all training and validation sets samples whose InChIKeys overlapped with this aggregated test list. Next, if a training split contained InChIKeys appearing in the remaining validation sets, those samples were removed from training. We reserved the GEOM-Revisited test set in this way for evaluation.
 
 Next, for Group B, we iteratively constructed new splits in the order KIBA-3D, OMol25-small-mols, PubChem3D, and ZINC. For each dataset, we initially targeted test and validation sizes of roughly 0.5% of the full dataset. Test candidates were selected as samples whose InChIKeys appeared in test sets of previously processed datasets or in the reserved test sets; validation candidates were selected analogously after excluding test-key matches. Training candidates were defined as samples whose InChIKeys did not appear in protected test or validation sets. When a candidate split exceeded its target size, we randomly subsampled whole InChIKey groups. Unselected holdout candidates were excluded from training. Otherwise, we filled the split from training candidates (already excluding protected test and validation matches), assigning all samples with the same InChIKey to the same split, while ensuring that added InChIKeys did not overlap with existing training sets of other datasets.
 
@@ -36,7 +36,7 @@ Counts are retained CSV rows (samples/conformers), not unique molecules. The thr
 | ∇²DFT — test conformations | — | — | 1,623,912 |
 | ∇²DFT — test scaffolds | — | — | 1,130,328 |
 | ∇²DFT — test structures | — | — | 1,152,833 |
-| **Total merged splits** | **191,526,245** | **1,810,008** | **5,560,978** |
-| GEOM-Revisited (reserved reference) | — | — | 23,404 |
+| GEOM-Revisited | — | — | 23,404 |
+| **Total (including GEOM-Revisited)** | **191,526,245** | **1,810,008** | **5,584,382** |
 
-GEOM-Revisited is reserved separately and is not included in the merged files or their totals. A dash means that no corresponding split is present for that row. These counts precede any additional exact-sample deduplication.
+GEOM-Revisited is included in the evaluation total and remains a separate test file. The merged test CSV contains 5,560,978 rows; GEOM-Revisited contributes an additional 23,404 rows. A dash means that no corresponding split is present for that row. These counts precede any additional exact-sample deduplication.
