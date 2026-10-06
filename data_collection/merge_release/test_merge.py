@@ -58,5 +58,14 @@ class ProvenanceTests(unittest.TestCase):
             with open(result['outputs']['test']['path']) as f:rows=list(csv.reader(f))
             self.assertEqual([r[5] for r in rows],['100','101','102','103'])
 
+    def test_crlf_source_header(self):
+        with tempfile.TemporaryDirectory() as temp:
+            task=self.setup_task(Path(temp));p=Path(task['source']['path'])
+            p.write_bytes(p.read_bytes().replace(merge.ORIGINAL_HEADER,b'name,enriched_text\r\n',1))
+            st=p.stat();task['source'].update(bytes=st.st_size,mtime_ns=st.st_mtime_ns)
+            task['end']=st.st_size
+            result=merge.run_chunk(task)
+            self.assertEqual(result['outputs']['train']['rows'],2)
+
 
 if __name__=='__main__':unittest.main()

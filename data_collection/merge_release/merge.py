@@ -50,7 +50,7 @@ def check_source(item):
 
 def source_rows(item, task):
     with open(item['path'], 'rb', buffering=BLOCK) as f:
-        if f.readline() != ORIGINAL_HEADER:
+        if next(csv.reader([f.readline().decode('utf-8')])) != ['name', 'enriched_text']:
             raise ValueError('Unexpected source header')
         if task['start']:
             f.seek(task['start'] - 1)
@@ -266,8 +266,9 @@ def prepare(root, output, code):
     # in parallel, while adding provenance; no split decision depends on them.
     row_start=0
     with open(item['path'],'rb',buffering=BLOCK) as f:
-        if f.readline()!=ORIGINAL_HEADER:raise ValueError('Unexpected conformation header')
-        whole=hashlib.sha256(ORIGINAL_HEADER)
+        header=f.readline()
+        if next(csv.reader([header.decode('utf-8')]))!=['name','enriched_text']:raise ValueError('Unexpected conformation header')
+        whole=hashlib.sha256(header)
         while True:
             start=f.tell();block=f.read(8*1024*1024)
             if not block:break
