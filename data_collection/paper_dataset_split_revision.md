@@ -10,7 +10,7 @@ Finally, for Group C (∇²DFT), we retained molecular overlap only with the pre
 
 ## Filtered dataset sizes
 
-Counts are retained CSV rows (samples/conformers), not unique molecules. The three ∇²DFT test sets are listed separately.
+Counts are retained samples/conformers before exact-sample deduplication.
 
 | Dataset | Train | Validation | Test |
 | --- | ---: | ---: | ---: |
@@ -38,5 +38,3 @@ Counts are retained CSV rows (samples/conformers), not unique molecules. The thr
 | ∇²DFT — test structures | — | — | 1,152,833 |
 | GEOM-Revisited | — | — | 23,404 |
 | **Total (including GEOM-Revisited)** | **191,526,245** | **1,810,008** | **5,584,382** |
-
-GEOM-Revisited is included in the evaluation total and remains a separate test file. The merged test CSV contains 5,560,978 rows; GEOM-Revisited contributes an additional 23,404 rows. A dash means that no corresponding split is present for that row. These counts precede any additional exact-sample deduplication.
