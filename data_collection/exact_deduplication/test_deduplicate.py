@@ -6,6 +6,7 @@ import tempfile
 import unittest
 import numpy as np
 import deduplicate as d
+import summarize_aliases
 
 
 class DeduplicationTests(unittest.TestCase):
@@ -49,5 +50,21 @@ class DeduplicationTests(unittest.TestCase):
    result=d.filter_region(task)
    self.assertEqual(result['removed_rows'],0)
    self.assertEqual(Path(result['outputs']['train']['path']).read_bytes(),b''.join(encoded[1:]))
+
+ def test_source_relationship_statistics(self):
+  with tempfile.TemporaryDirectory() as tmp:
+   root=Path(tmp);p=root/'aliases.csv'
+   with p.open('w',newline='') as f:
+    w=csv.writer(f,lineterminator='\n');w.writerow(d.ALIAS_HEADER)
+    for sid,dataset in [('s2','B'),('s3','A'),('s1','A')]:
+     w.writerow([sid+':1','s1:0',dataset,'original',sid,'1','VNWKTOKETHGBQD-UHFFFAOYSA-N','','train'])
+   sources=[{'source_file_id':sid,'output_dataset':dataset,'test_subset':'','path':sid+'.csv'}
+            for sid,dataset in [('s1','A'),('s2','B'),('s3','A')]]
+   d.atomic(root/'sources.json',{'files':sources})
+   d.atomic(root/'manifest.json',{'duplicate_aliases':{'path':str(p),'rows':3,'sha256':d.sha(p)},
+            'removed_rows':{'train':3},'deduplication_policy':'first occurrence'})
+   result=summarize_aliases.summarize(root)
+   self.assertEqual(result['by_split_relationship']['train'],{
+     'different_dataset':1,'different_source_file_same_dataset':1,'same_prepared_source_file':1})
 
 if __name__=='__main__':unittest.main()
