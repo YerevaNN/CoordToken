@@ -8,35 +8,37 @@ Next, for Group B, we iteratively constructed new splits in the order KIBA-3D, O
 
 Finally, for Group C (∇²DFT), we retained molecular overlap only with the predefined *test conformations* set, while ensuring that its training split does not overlap with validation or protected test splits of Groups A and B, its own *test scaffolds* and *test structures* sets, or the GEOM-Revisited test set. Because ∇²DFT has no predefined validation split, we constructed validation to reach approximately 0.5% of the full ∇²DFT size. After removing test-key matches, we first selected samples whose InChIKeys appeared in existing validation sets, subsampling whole InChIKey groups if necessary. We then filled any remaining quota from the filtered training pool using only InChIKeys absent from all Group A and B training sets. All samples with the same InChIKey were assigned together, so split sizes could exceed the targets. We verified global train–validation, train–test, and validation–test molecular separation, with the conformation-test exception. Molecular overlap between training and the conformation test was intentionally allowed, since this test is intended to evaluate different conformations of the same molecules. For the scaffold test, we excluded matching InChIKeys from training and validation; we did not exclude other molecules solely because they shared a scaffold. All random selections during split construction used a fixed seed of 42.
 
+Finally, we removed exact duplicate enriched molecular strings within each merged split, retaining the first occurrence and preserving all source identities in a provenance mapping. GEOM-Revisited was retained as a separate benchmark.
+
 ## Filtered dataset sizes
 
-Counts are retained samples/conformers before exact-sample deduplication.
+Counts are retained samples/conformers after exact-sample deduplication within the merged splits.
 
 | Dataset | Train | Validation | Test |
 | --- | ---: | ---: | ---: |
-| BindingMOAD | 20,529 | 129 | 468 |
-| BindingNet-High | 210,818 | 127 | 3,729 |
-| BindingNet-Low | 251,747 | 1,889 | 6,850 |
-| BindingNet-Mid | 144,352 | 326 | 3,312 |
-| CrossDocked2020 | 78,241 | 262 | 100 |
+| BindingMOAD | 20,480 | 129 | 467 |
+| BindingNet-High | 210,402 | 127 | 3,729 |
+| BindingNet-Low | 251,400 | 1,888 | 6,847 |
+| BindingNet-Mid | 144,014 | 326 | 3,312 |
+| CrossDocked2020 | 78,233 | 262 | 100 |
 | DAVIS-3D | 129 | 7 | 225 |
-| HiQBind | 24,518 | 48 | 279 |
-| Kinodata-3D | 61,245 | 95 | 225 |
-| OMol25-bio-mols | 1,344,106 | 35 | 225 |
-| Plinder | 127,987 | 362 | 950 |
+| HiQBind | 24,495 | 48 | 279 |
+| Kinodata-3D | 61,112 | 95 | 225 |
+| OMol25-bio-mols | 1,314,710 | 35 | 225 |
+| Plinder | 122,072 | 362 | 949 |
 | SAIR | 1,521,900 | 99 | 225 |
-| SPINDR | 26,671 | 56 | 225 |
+| SPINDR | 25,340 | 56 | 225 |
 | ChEMBL3D | 1,428,111 | 180,929 | 37,065 |
-| GEOM | 5,099,357 | 689,655 | 711,546 |
+| GEOM | 5,097,261 | 689,288 | 711,228 |
 | KIBA-3D | 260,129 | 1,533 | 1,576 |
-| OMol25-small-mols | 4,033,245 | 21,597 | 37,384 |
-| PubChem3D | 93,802,743 | 473,756 | 473,758 |
-| ZINC | 74,401,034 | 375,763 | 375,763 |
+| OMol25-small-mols | 3,551,242 | 21,127 | 36,120 |
+| PubChem3D | 93,724,490 | 473,331 | 473,528 |
+| ZINC | 73,267,125 | 369,924 | 370,023 |
 | ∇²DFT | 8,689,383 | 63,340 | — |
 | ∇²DFT — test conformations | — | — | 1,623,912 |
 | ∇²DFT — test scaffolds | — | — | 1,130,328 |
 | ∇²DFT — test structures | — | — | 1,152,833 |
 | GEOM-Revisited | — | — | 23,404 |
-| **Total (including GEOM-Revisited)** | **191,526,245** | **1,810,008** | **5,584,382** |
+| **Total (including GEOM-Revisited)** | **189,792,028** | **1,802,906** | **5,576,825** |
 
 [^split-targets]: Targets were based on input row counts before split exclusions. Two possible reasons for higher final percentages are whole InChIKey groups exceeding the target row count and split exclusions reducing the denominator.
