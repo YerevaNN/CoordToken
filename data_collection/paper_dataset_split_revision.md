@@ -39,4 +39,4 @@ Counts are retained samples/conformers before exact-sample deduplication.
 | GEOM-Revisited | — | — | 23,404 |
 | **Total (including GEOM-Revisited)** | **191,526,245** | **1,810,008** | **5,584,382** |
 
-[^split-targets]: Targets were based on input row counts before split exclusions. Keeping whole InChIKey groups could exceed these targets, and exclusions could increase the final percentages among retained rows.
+[^split-targets]: Targets were based on input row counts before split exclusions. Two possible reasons for higher final percentages are whole InChIKey groups exceeding the target row count and split exclusions reducing the denominator.
