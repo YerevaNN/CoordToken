@@ -31,6 +31,25 @@ or stereo-free matching, salt stripping, or conformer collapsing.
 
 ## Execution
 
+Completed on 2026-10-06: index job `313668` (1h06m20s), split job `313670`
+(2h08m20s), both exit code zero. All 183,260,646 input/reference rows produced
+keys without new failures. Final Group B training/validation assignments had
+zero prohibited overlaps with the final ownership registry.
+
+| Dataset | Training | Validation | Test | Excluded |
+| --- | ---: | ---: | ---: | ---: |
+| KIBA-3D | 260,129 | 1,533 | 1,576 | 17,770 |
+| OMol25_small_mols | 4,033,245 | 21,597 | 37,384 | 226,716 |
+| pubchem3d | 93,802,743 | 473,756 | 473,758 | 0 |
+| zinc | 74,401,034 | 375,763 | 375,763 | 0 |
+
+The 244,486 exclusions are existing-holdout candidates outside the sampled
+quotas; none were returned to training. OMol's test target was 21,595 rows, but
+the largest selected whole molecular group has 24,255 rows, producing a final
+37,384-row test set. This overshoot preserves all conformers of a key together.
+[Completion evidence](evidence/group_b_20261006.json) includes per-dataset
+selection counts, output hashes, and remaining Group C/global verification work.
+
 The first stage indexes the four Group B pools and the existing nabla training
 pool in parallel. The second stage uses SQLite to aggregate key counts and
 ownership, processes datasets sequentially, and writes CSV chunks in parallel.
