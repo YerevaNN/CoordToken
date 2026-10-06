@@ -10,6 +10,12 @@ training artifact, not an input to the filtering pipeline.
 
 ## New InChIKey cleaning revision
 
+For the October 2026 pass starting from corrected **grouped inputs**, see
+[Group A processing](group_a_split/README.md). It preserves Group A partitions,
+protects full InChIKeys from fixed holdouts, and keeps nabla's conformation-test
+molecular overlap exception. Group A remains provisional until newly selected
+Group B/C holdouts are applied globally.
+
 For the full Standard InChIKey audits, non-destructive filter, tests, completed
 nabla correction evidence, and planned global release, see
 [INCHIKEY_CLEANING.md](INCHIKEY_CLEANING.md).
