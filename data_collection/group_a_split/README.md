@@ -23,6 +23,26 @@ same name. The quarantined validation key remains reserved against training.
 The three unresolved PubChem/ZINC records belong to Group B and are outside this
 pass.
 
+## Completed run: 2026-10-06
+
+Slurm job `313611` completed successfully in 8 minutes 52 seconds using code
+commit `416a3f9`. All 42 CSV outputs passed the runner's checks and matched an
+independent recomputation from the first attempt's complete identity index.
+No new Group A parse/key failures were found. The six preexisting ChEMBL
+quarantine records remain excluded.
+
+| Partition | Input rows | Retained rows | Removed rows |
+| --- | ---: | ---: | ---: |
+| Training | 11,094,343 | 10,339,711 | 754,632 |
+| Validation | 901,495 | 874,019 | 27,476 |
+| Test | 765,424 | 765,424 | 0 |
+
+[Completion evidence](evidence/group_a_20261006.json) records per-file input and
+output hashes, counts, checks, code revision, and remaining global-split work.
+The previous job `313567` failed because its quarantine guard assumed ChEMBL
+names were unique across splits; the source-path/name/row-hash guard fixes that
+false positive. Failed partial outputs were not promoted or overwritten.
+
 ## Run
 
 Use the same RDKit version as the verified preflight (the October 2026 snapshot
