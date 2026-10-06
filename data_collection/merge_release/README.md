@@ -42,3 +42,27 @@ The launcher requests 64 CPUs and 256 GB of memory. The number of assembly
 workers is capped at 32 to limit concurrent filesystem writes. The completed
 molecular overlap checks are inherited through the pinned input manifest;
 merging does not introduce new split assignments.
+
+## Completed release: 2026-10-06
+
+Job 314163 completed the merge and full readback in 720.6 seconds using 64
+workers. All source alignment, key sidecar, split-part, row-count, and merged
+readback checks passed. Five provenance/integrity regression tests passed before
+submission. The first attempt (314162) stopped during preflight on a CRLF header;
+the corrected header check preserves byte-level source verification.
+
+Release directory:
+`/mnt/weka/fgeikyan/3dmolgen_bigdata/data_handoff/merged_20261006/`
+
+| File | Rows | Bytes |
+| --- | ---: | ---: |
+| `merged_train.csv` | 191,526,245 | 144,470,480,309 |
+| `merged_val.csv` | 1,810,008 | 1,419,365,658 |
+| `merged_test.csv` | 5,560,978 | 4,014,520,155 |
+
+The directory also contains `sources.json`, `manifest.json`, and `SHA256SUMS`.
+See [completion evidence](evidence/merged_20261006.json) for hashes and checks,
+and [dataset counts and methods](../paper_dataset_split_revision.md).
+GEOM-Revisited remains a separate 23,404-row evaluation test file referenced by
+the prior combined split manifest; evaluation totals include it, whereas the
+merged test CSV does not. No additional exact-sample deduplication was performed.
