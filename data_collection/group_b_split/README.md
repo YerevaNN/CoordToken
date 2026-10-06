@@ -118,3 +118,38 @@ test-over-validation precedence, existing-training protection (including nabla),
 whole-conformer assignment, quota exclusions, deterministic selection under
 different insertion orders, target shortfalls, invalid-row quarantine, byte
 chunk boundaries, output accounting, and source immutability.
+
+## Independent check of materialized holdouts
+
+`verify_holdout_precedence.py` reparses every actual Group A/B validation/test
+CSV plus the fixed nabla structure/scaffold and GEOM-revisited tests through
+RDKit's direct `MolToInchiKey` API. It builds fresh test/validation sets without
+using `ownership.sqlite`, checks every validation set against the test union,
+and checks retained training assignments against that union. It also rereads
+the full hashes of all 54 written A/B CSVs and the three fixed reference files.
+Training uses the saved row-key/assignment evidence rather than a fresh
+conversion of all 183 million indexed rows; the report states this boundary.
+
+```bash
+python data_collection/group_b_split/verify_holdout_precedence.py \
+  --group-a /path/to/completed-group-a-run \
+  --group-b /path/to/completed-group-b-split-run \
+  --output /path/to/new-independent-verification --workers 48
+```
+
+The verifier's regression includes a deliberately contaminated materialized
+validation CSV, even while the saved assignment database remains clean, to
+confirm that the fresh holdout scan detects the conflict.
+
+The completed independent check (job `314132`, 2026-10-06, 4m39s) reparsed all
+5,707,138 holdout rows in 39 files. The written test and validation unions share
+zero keys; indexed retained Group A/B training has zero matches to their union.
+All 57 complete CSV hashes matched. See the
+[verification report](evidence/independent_holdout_verification_20261006.json).
+
+PubChem's zero excluded rows does not mean zero overlap with existing holdouts.
+Its 223,138 existing-test matches and 147,575 validation-only matches fit below
+the quotas and were assigned to their respective splits. Among the 2,612 keys
+shared by the original test/validation reference lists, PubChem contains 270
+keys representing 2,461 rows. Every one was assigned to test; none entered
+validation or training. Test priority is applied before validation matching.
