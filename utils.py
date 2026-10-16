@@ -438,6 +438,8 @@ def decode_cartesian_v2(enriched_string):
         )
 
     Chem.SanitizeMol(mol)
+    # Complete text-specified stereo before attaching geometry.
+    Chem.AssignStereochemistry(mol, cleanIt=True, force=True)
 
     conformer = Chem.Conformer(mol.GetNumAtoms())
     for idx, (x, y, z) in enumerate(coords):

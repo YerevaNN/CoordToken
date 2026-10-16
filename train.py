@@ -186,6 +186,15 @@ def read_key_value_file(path: Path) -> dict[str, str]:
     return parsed
 
 
+def _batch_tensors(features, atom_mask):
+    # Use all vocabulary positions: punctuation is a real token, too.
+    present = np.flatnonzero(features[:, :, :V].any(axis=(0, 2)))
+    length = int(present[-1]) + 1 if present.size else 1
+    length = min(features.shape[1], ((length + 7) // 8) * 8)
+    return (torch.from_numpy(features[:, :length].copy()),
+            torch.from_numpy(atom_mask[:, :length].copy()))
+
+
 class CSVMolDataset(IterableDataset):
     def __init__(self, path: str | Path, num_samples: int):
         super().__init__()
@@ -232,7 +241,7 @@ class CSVMolDataset(IterableDataset):
                     curr += 1
 
                     if curr == BATCH_SIZE:
-                        yield torch.from_numpy(f_batch.copy()), torch.from_numpy(m_batch.copy())
+                        yield _batch_tensors(f_batch, m_batch)
                         f_batch.fill(0.0)
                         m_batch.fill(0.0)
                         curr = 0
@@ -241,7 +250,7 @@ class CSVMolDataset(IterableDataset):
                     continue
 
             if curr > 0:
-                yield torch.from_numpy(f_batch.copy()), torch.from_numpy(m_batch.copy())
+                yield _batch_tensors(f_batch, m_batch)
 
 
 def make_val_loaders(val_dir: str | None, num_workers: int):
@@ -400,7 +409,7 @@ class MolDataset(IterableDataset):
                         print(f"WOW, Error processing row: {e}")
                         continue
 
-                yield torch.from_numpy(f_batch.copy()), torch.from_numpy(m_batch.copy())
+                yield _batch_tensors(f_batch, m_batch)
 
             mm.close()
 
@@ -633,6 +642,11 @@ class MolModel(L.LightningModule):
         indices_np = indices[0].detach().cpu().numpy()
         return build_fsq_string(enriched_smiles, indices_np)
 
+    def _project_coordinates(self, h):
+        # Keep the small XYZ projection in FP32 under mixed-precision training.
+        with torch.autocast(device_type=h.device.type, enabled=False):
+            return self.out(h.float())
+
     def decode_text(self, fsq_text: str, precision: int = 4) -> str:
         from torch.nn.attention import SDPBackend, sdpa_kernel
         tokens, codes_np = parse_fsq_text(fsq_text)
@@ -649,7 +663,7 @@ class MolModel(L.LightningModule):
             d_in = self.post_q(torch.cat([xv, quant], dim=-1))
             pe = self._get_pos_emb(T, d_in.device, d_in.dtype)
             h = self.dec(d_in + pe, src_key_padding_mask=None)
-            recon = self.out(h)[0].detach().cpu().numpy()
+            recon = self._project_coordinates(h)[0].detach().cpu().numpy()
 
         return format_enriched_from_tokens_and_coords(tokens, recon, precision=precision)
 
@@ -670,7 +684,7 @@ class MolModel(L.LightningModule):
                 xv = torch.zeros_like(xv)
             d_in = self.post_q(torch.cat([xv, quant], dim=-1))
             h = self.dec(d_in + pe, src_key_padding_mask=pad_mask)
-            recon = self.out(h)
+            recon = self._project_coordinates(h)
             return recon, indices
 
 
