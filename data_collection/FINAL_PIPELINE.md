@@ -14,7 +14,7 @@ These are the CoordToken corpus files, distinct from the later CASF/protomer-fil
 
 ## Inputs and execution order
 
-Start from the corrected grouped source snapshot recorded in [prepared_input_manifest.json](prepared_snapshot_20261005/prepared_input_manifest.json), not an already filtered merged release. Some surviving sources had earlier filtering; this is not an untouched raw-source reconstruction. PubChem/ZINC are sampled collections, not the full databases. The historical SDFs are not all retained.
+Start from the corrected grouped source snapshot recorded in [prepared_input_manifest.json](prepared_snapshot_20261005/prepared_input_manifest.json), not an already filtered merged release. ChEMBL uses the source-checked replacement populations documented in [its installation receipt](prepared_snapshot_20261005/chembl_origin/owned_chembl_install.json); these differ in membership from the defective backup files. Some surviving sources had earlier filtering; this is not an untouched raw-source reconstruction. PubChem/ZINC are sampled collections, not the full databases. The historical SDFs are not all retained.
 
 1. Inspect the [prepared snapshot and repair evidence](prepared_snapshot_20261005/README.md). Restore or provide the recorded source/reference files and verify their hashes. Nine unresolved source rows remain quarantined: six ChEMBL, one PubChem, two ZINC. Ten other PubChem rows have source-backed repairs and restoration evidence.
 2. Run [Group A prepare and processing](group_a_split/README.md). Existing supplied partitions are preserved. Fixed test identities take priority over validation, and validation over training. The prepared snapshot and pinned parser/RDKit are required.
