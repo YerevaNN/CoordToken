@@ -1,0 +1,18 @@
+{
+  "created_utc": "2026-10-17T20:59:52.726894+00:00",
+  "selected_by": "held-out validation; epoch2 better than epoch3",
+  "training_rows_per_epoch": 189792028,
+  "epochs": 2,
+  "source_checkpoint": "/mnt/weka/fgeikyan/CoordToken/logs/mixed_epoch2_20261014/run/model.pt",
+  "checkpoint_sha256": "29d487cf3783978c801c5a237e3c3c86cc23ab058aa7edea7eff0aa707c4bc4f",
+  "format": "atom12_reg1_prefix_v1",
+  "model_architecture": "one12-bit geometry code per atom plus one transmitted molecular register code",
+  "files": {
+    "manifest.json": "3d9692cfc0812074686eeffa0a0f62adaaa086cc6abd8931089451ad69dd93cd",
+    "validation.json": "73961cd998ca1494f94b3f94c086885e56bb85e5df438849cf497558956a9807",
+    "result.json": "dddeb2e7e88395b552a3528375b57c7b345528e371d4fe7af6faaabe3cb03e9d",
+    "model.pt": "29d487cf3783978c801c5a237e3c3c86cc23ab058aa7edea7eff0aa707c4bc4f",
+    "source/quantizer.py": "b520f0468c752e8de91c387ece1c6d964833f6c659a6fb12aa1793e3bd10a979",
+    "source/model.py": "f9188bc872e588d561928c1e1e2e184c636cea51317d0c560be2ff78072980a1"
+  }
+}
