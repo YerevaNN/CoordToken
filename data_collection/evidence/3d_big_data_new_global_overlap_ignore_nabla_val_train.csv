@@ -1,0 +1,8 @@
+metric,count
+train_unique_smiles,91272847
+val_unique_smiles,632440
+test_unique_smiles,512876
+train_val_overlap,0
+train_test_overlap,0
+val_test_overlap,0
+ignored_train_val_overlap_nablaDFT,624

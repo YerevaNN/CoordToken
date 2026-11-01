@@ -1,0 +1,53 @@
+{
+  "created": "2026-10-08",
+  "release": "/mnt/weka/fgeikyan/3dmolgen_bigdata/data_handoff/merged_final",
+  "test_access": false,
+  "full_epochs": 1,
+  "full_world_size": 8,
+  "full_global_batch": 1024,
+  "pilot_steps": 5000,
+  "pilot_batch": 128,
+  "pilot_seeds": [
+    123,
+    124
+  ],
+  "sample_seed": 20261008,
+  "validation_molecules_per_source": 512,
+  "precision": "bf16 mixed with FP32 coordinate output and quantization",
+  "token_format": "one 12-bit FSQ code per real token, including punctuation",
+  "primary_metric": "macro average of per-source mean molecule RMSD, no alignment",
+  "selection": "Compare only final fixed-budget validation. Prefer baseline unless an alternative improves macro RMSD by >=2% for both seeds without >5% aggregate p95 or per-source regression. Compact is eligible within 1% macro RMSD on both seeds and 5% p95/per-source with >=20% faster steps. Pick lowest macro RMSD among qualifying alternatives; compact tradeoff only if no clear quality winner. This is a conservative engineering rule, not a novelty or significance claim. Mean bond and pair-distance errors must also stay within 5% on both seeds.",
+  "arms": [
+    {
+      "name": "baseline",
+      "width": 1024,
+      "layers": 8,
+      "workspace": 0,
+      "lr": 0.0001
+    },
+    {
+      "name": "baseline_lr2",
+      "width": 1024,
+      "layers": 8,
+      "workspace": 0,
+      "lr": 0.0002
+    },
+    {
+      "name": "compact",
+      "width": 768,
+      "layers": 8,
+      "workspace": 0,
+      "lr": 0.0002
+    },
+    {
+      "name": "workspace",
+      "width": 1024,
+      "layers": 8,
+      "workspace": 4,
+      "lr": 0.0002
+    }
+  ],
+  "full_seed": 123,
+  "pilot_accumulation": 8,
+  "schedule": "Matched full-run prefix: 1000 optimizer-step linear warmup, constant LR until 90% of full-run updates, then cosine; pilot has no artificial early decay."
+}

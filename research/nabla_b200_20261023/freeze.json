@@ -1,0 +1,21 @@
+{
+  "files": {
+    "README.md": "2197042cf78055e35d8b8c791b29fa96a17fe96e63bb530360832edf1087052a",
+    "common.py": "0c1d139ce5925b19653e860786b9576761fde26af1f64c39c4f01e3cfbbecf70",
+    "epoch_data.py": "e1034caaff98143c00fcd6e5db5cda4634c9cf7bb2e7fe7e9c20d972ebef7739",
+    "evaluate.py": "d9dd0082a83550683c8323841d89131b72df2f0025cfaae64a1333b5273ebfee",
+    "health.py": "f834b70bd5ae0b4317b4d18ab7e59794629f30c608603ae5773dd3c6ec2f4fa5",
+    "metrics.py": "821ae8e427a3657e298ee12aeebb1b6dcf2f0794729b47aaca09edaf58f7318a",
+    "model.py": "eba3e0266f0fb498936f96aad664f48ebdb63bd3be1396436af308f7cdf5d379",
+    "nabla_data.py": "08bc8376d7fb5a2bd86af342eb13b5da3f9ca58f95442b3a71fa3d6caefafabd",
+    "prepare_destination.py": "0912ac33cb8f69002e680a9a23c59e15156bcb7dbef77555e3aa11d33231b4ff",
+    "quantizer.py": "b520f0468c752e8de91c387ece1c6d964833f6c659a6fb12aa1793e3bd10a979",
+    "queued_dispatch.py": "75027a8de1c76485fe04cbbf79878889a085a0e08f17ec289427a1edb6f5bd27",
+    "run_all.py": "ee7f7e3c6ecad729d3201359408c833735dcf2452b682e1d199f4d856a0fd941",
+    "schedule.py": "9c632383ceb90212dd829d11fbab62a4f0df7f826f8d76cf18be48eb5bab55c5",
+    "test_schedule.py": "8eca3e8156d22b37e7a2626c4dd84f0d3bca172cacad714dc61ad9fbc3d7dda1",
+    "train.py": "2075e76ff98b5f89cfdfc72c4e08b23ad2873f4280d447b5c7f743b1825b1541",
+    "validation_data.py": "471ddcc1b0a74d27a8e691bb995351e73a1a7f3239160fb0ba514265bba9a51d"
+  },
+  "note": "Full epochs 3,6,12,22; once-only 0.3 epoch warmup; eight GPUs, retained queued IDs."
+}

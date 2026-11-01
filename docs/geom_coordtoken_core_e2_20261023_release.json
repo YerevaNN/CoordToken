@@ -1,0 +1,27 @@
+{
+  "status": "verified",
+  "sft_ready": true,
+  "model_name": "CoordToken-Core-E2",
+  "dataset_name": "GEOM-CoordToken-Core-E2",
+  "checkpoint": "/mnt/weka/fgeikyan/CoordToken/artifacts/releases/coordtoken-atom12-reg1-mixed-epoch2-20261017/model.pt",
+  "checkpoint_sha256": "29d487cf3783978c801c5a237e3c3c86cc23ab058aa7edea7eff0aa707c4bc4f",
+  "tokenizer": "/mnt/weka/fgeikyan/CoordToken/research/coordtoken_encoding_20261019/source/src/molgen3D/training/tokenizers/Qwen3_tokenizer_coordtoken_atom12_reg1",
+  "splits": {
+    "train": {
+      "path": "/mnt/weka/fgeikyan/3dmolgen_bigdata/datasets/geom_coordtoken_core_e2_20261023/processed_strings/train",
+      "rows": 5745689,
+      "manifest_sha256": "08b0495ac2136119fdb782480b6d729f36247d94529bf6dac46650db009e5bc4"
+    },
+    "valid": {
+      "path": "/mnt/weka/fgeikyan/3dmolgen_bigdata/datasets/geom_coordtoken_core_e2_20261023/processed_strings/valid",
+      "rows": 716818,
+      "manifest_sha256": "687951b6242197d2514b406b5ea9d88012cf7a3e1c8e6797e84d005698381189"
+    },
+    "test": {
+      "path": "/mnt/weka/fgeikyan/3dmolgen_bigdata/datasets/geom_coordtoken_core_e2_20261023/processed_strings/test",
+      "rows": 711546,
+      "manifest_sha256": "1bd95fe525dbf5e6f478b42ff0118327c225a3c07252dfdbce828cb6a1f0c6a6"
+    }
+  },
+  "plan_sha256": "de9baca3ad4a24bdd355ddcfb6163938c9e20a18606221223cbc9f2ab63d4b84"
+}

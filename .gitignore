@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+.cache/
+logs/
+artifacts/
+datasets/
+*.pt
+*.ckpt
+*.pkl
+*.csv.zst
+*.zip

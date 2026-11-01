@@ -1,0 +1,10 @@
+split_a,dataset_a,split_b,dataset_b,intersection_rows
+train,OMol25_bio_mols,train,OMol25_small_mols,435249
+train,HiQBind,train,OMol25_bio_mols,56
+train,HiQBind,train,OMol25_small_mols,51
+test,OMol25_bio_mols,test,OMol25_small_mols,4
+val,OMol25_bio_mols,val,OMol25_small_mols,4
+train,BindingMoad,train,Plinder,3
+train,BindingNet-High,train,BindingNet-Low,3
+train,BindingNet-Low,train,BindingNet-Mid,2
+test,BindingMoad,test,Plinder,1

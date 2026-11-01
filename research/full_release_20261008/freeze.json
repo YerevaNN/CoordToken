@@ -1,0 +1,22 @@
+{
+  "status": "frozen_before_pilot_results",
+  "files": {
+    "model.py": "48da931c18a0671037ecd55a18f7f8b46d688cb929d3ed0bfcac40e8211da2bc",
+    "choose_model.py": "4c150c705599ef14cc3c934503546e418fa8e141a708a8ac69119be73906c31d",
+    "prepare_indices.py": "2da85f2fb86ced59af68dba0157e208e6d9111456226a123746febf51d9167a4",
+    "smoke.py": "91bf3ab687eb440fa05f89a8b995413ff6a6ecc65009462e69225b4d1fc70c57",
+    "metrics.py": "269bc79b4054ea7b6ae6bd1e5e4c3e4f4587fe485d309c211bf05d2700f7eac2",
+    "gpu_check.py": "e0026e08e4f7f668aed0c1af88659832b8fc611ef1aa39a94a00e0df5cdb7eac",
+    "data.py": "87b4800b1c7406527113ba7047c55938912fed4608d3b3fd852fb6bf05444ff9",
+    "verify_cache.py": "4b1bb42ce007d54db22bd3b5b9fa9f9bbcdbd04ef47dfe4c6ac2e792d449e51f",
+    "train_run.py": "aea2c311953b5b0a85b83d9da96ef519b53afedab93cb1c3534df85f060be242",
+    "run_pilots.py": "66c7c0ce30b16ef33a8365be025ecfc776cf42c8852c2d77c7e6efebb678e705",
+    "quantizer.py": "b520f0468c752e8de91c387ece1c6d964833f6c659a6fb12aa1793e3bd10a979",
+    "prepare.py": "427d7c6c97ea8ac5d113ca6a219aa1a1418bd30e0593f91bacf09704cab5e121",
+    "launch_full.py": "794049cfa8de8cdc8ab30e6d0879a0512290c0506dafd26eaca5f8c4b3d61b9c",
+    "run_pilot_task.py": "cd53264818f4e34da912eeb02dbe4d8160b96b7c9afd46b9dca341fd5e65927d",
+    "protocol.json": "2d9d0cae26b6c64a298e30ae77be5faf0e1c093f18ebe70c25d7c0af6895d06a",
+    "benchmark.py": "26fc8701046d47e055186215fef24ba3c10dd4cefad1335d90ab1ce123639e96"
+  },
+  "amendment": "Before any validation results: model speed gate uses matched same-GPU cached train batches because array tasks run on different nodes. Training protocol/quality thresholds unchanged."
+}

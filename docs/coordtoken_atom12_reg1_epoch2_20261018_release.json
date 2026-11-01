@@ -1,0 +1,31 @@
+{
+  "status": "verified",
+  "checkpoint_sha256": "29d487cf3783978c801c5a237e3c3c86cc23ab058aa7edea7eff0aa707c4bc4f",
+  "splits": {
+    "train": {
+      "status": "verified",
+      "rows": 189792028,
+      "source_sha256": "24d13d817438ce5123cd3753e33cbf39d2555768456ab3de5a7516f6b3eeec96",
+      "manifest": "/mnt/weka/fgeikyan/3dmolgen_bigdata/datasets/coordtoken_atom12_reg1_epoch2_20261018/train/coordtoken_manifest.json",
+      "manifest_sha256": "73e809fad1f5d3d4392b98ccb7135f565f1289dc93ccb3d80f7f130e5d38b2a0",
+      "lm_tokens": 24410494513
+    },
+    "val": {
+      "status": "verified",
+      "rows": 1802906,
+      "source_sha256": "535a599591f2d1b9737dd77807fdbb93e7e231503575c05c35b0b9f6c242c9f7",
+      "manifest": "/mnt/weka/fgeikyan/3dmolgen_bigdata/datasets/coordtoken_atom12_reg1_epoch2_20261018/val/coordtoken_manifest.json",
+      "manifest_sha256": "91eb9eac399de13eb58eb054fdccfdce841cd39dd962b0fe864eb370a53e3396",
+      "lm_tokens": 239100485
+    },
+    "test": {
+      "status": "verified",
+      "rows": 5553421,
+      "source_sha256": "089c2afd4af973b77e7a894d2eda04544afff5c9e5530e47d6d00aaa999e0211",
+      "manifest": "/mnt/weka/fgeikyan/3dmolgen_bigdata/datasets/coordtoken_atom12_reg1_epoch2_20261018/test/coordtoken_manifest.json",
+      "manifest_sha256": "2b9a5eced8e32a5caa7428765adcf30a540b02714bd2096c0129c88839d17fa1",
+      "lm_tokens": 647969100
+    }
+  },
+  "training_started": false
+}

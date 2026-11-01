@@ -1,0 +1,9 @@
+{
+  "plan_sha256": "de9baca3ad4a24bdd355ddcfb6163938c9e20a18606221223cbc9f2ab63d4b84",
+  "files": {
+    "worker.py": "2003ed24027d1f4c3981afea85f21a74a32ed733865a1acd421e41865a3bdc69",
+    "finalize.py": "cb785db1f315ca0e27497c8a5bd7501a4893f83643c060666a8f38b9e0e95e45",
+    "array.sbatch": "e9a066d6c40247dcec5642d821ac1a35208147b0f463341f2dcc42fa13c6a1f8",
+    "finalize.sbatch": "3536a9a272be5cb49e7526172159c0ca2eca197fa0f60c997b3d5b5934006388"
+  }
+}
