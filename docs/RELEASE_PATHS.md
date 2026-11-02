@@ -52,7 +52,8 @@ Compression is complete: 70 Zstandard CSV shards (67 train, one validation,
 and two test), totaling 58,980,050,447 bytes (58.98 GB). All compressed-shard
 SHA-256 hashes were rechecked on 2026-11-02. Source hashes, row counts and shard
 metadata are recorded in [the package manifest](dataset_package_manifest.json).
-The data have not been uploaded; public publication awaits explicit confirmation.
+Published publicly and verified at revision [`5f0a7c09f65870cbfa3310e34b41e74dbb612da0`](https://huggingface.co/datasets/FilyaGeikyan/CoordToken-data/tree/5f0a7c09f65870cbfa3310e34b41e74dbb612da0).
+The [publication receipt](dataset_publication.json) records the remote checks.
 Local staging and progress:
 `/mnt/weka/fgeikyan/CoordToken/artifacts/huggingface_release_20261101/`.
 Only a `publication.json` with `status: published_verified` plus the matching

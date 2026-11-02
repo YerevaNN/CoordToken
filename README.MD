@@ -25,7 +25,8 @@ The corpus contains **189,792,028 training**, **1,802,906 validation**, and
 Use this final deduplicated release, not the intermediate `merged_20261006`.
 
 Hugging Face destination: [FilyaGeikyan/CoordToken-data](https://huggingface.co/datasets/FilyaGeikyan/CoordToken-data).
-**Publication is pending; this link is not yet a claim that the files are available.**
+**Published and verified:** [5f0a7c09f65870cbfa3310e34b41e74dbb612da0](https://huggingface.co/datasets/FilyaGeikyan/CoordToken-data/tree/5f0a7c09f65870cbfa3310e34b41e74dbb612da0).
+All 70 compressed shards (58.98 GB) match their recorded SHA-256 hashes.
 The replacement contains coordinate-bearing CSV shards and their provenance,
 not learned integer-code exports. Existing local Qwen exports are listed in
 [Release paths](docs/RELEASE_PATHS.md).
