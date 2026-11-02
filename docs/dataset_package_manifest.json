@@ -1,0 +1,456 @@
+{
+  "status": "verified",
+  "format": "CSV compressed with Zstandard",
+  "header_in_every_shard": true,
+  "preserves_source_row_order": true,
+  "source_manifest_sha256": "3e2470cc420fe8241b1c25487ff31f4a2136d7841a3c8a0daccc3df5ab1ce649",
+  "splits": [
+    {
+      "split": "train",
+      "source_file": "merged_train.csv",
+      "source_bytes": 143334916343,
+      "source_sha256": "24d13d817438ce5123cd3753e33cbf39d2555768456ab3de5a7516f6b3eeec96",
+      "rows": 189792028,
+      "shards": [
+        {
+          "path": "data/train/part-00000.csv.zst",
+          "rows": 2776937,
+          "bytes": 873854733,
+          "sha256": "69581cce9f163f38d3363c23a0086b1bd70a81548bb513cef98fa63394a7f031"
+        },
+        {
+          "path": "data/train/part-00001.csv.zst",
+          "rows": 2403895,
+          "bytes": 891131933,
+          "sha256": "3d21e2bdb65ef427c4856098d87f5637ad0a819a6ba5b29f5107bc5df656821c"
+        },
+        {
+          "path": "data/train/part-00002.csv.zst",
+          "rows": 2638904,
+          "bytes": 859230574,
+          "sha256": "e4eedf217dd82c63aa89c9b1a038d8a7aacd5f20c9ad40c3bce6a6410c76b95a"
+        },
+        {
+          "path": "data/train/part-00003.csv.zst",
+          "rows": 2635128,
+          "bytes": 861363046,
+          "sha256": "beef84f8ade2aa0615eb4e9339f900c327233d8c1def00de32cb3c73f081af17"
+        },
+        {
+          "path": "data/train/part-00004.csv.zst",
+          "rows": 3718990,
+          "bytes": 737347244,
+          "sha256": "a5888d4a6eed656931b903cc978d51afb6ae09a8e8adeb0d5ceee5cbe8151e47"
+        },
+        {
+          "path": "data/train/part-00005.csv.zst",
+          "rows": 2781101,
+          "bytes": 860946580,
+          "sha256": "463e50a92f1121dc6ca8c3f7e32bb317687127c902eb40e96d805db680bad1f3"
+        },
+        {
+          "path": "data/train/part-00006.csv.zst",
+          "rows": 2778094,
+          "bytes": 860257563,
+          "sha256": "cbb1597885e415324c55a08989878bcd0e664ff3d4ee1de4e51a7bd820d872ad"
+        },
+        {
+          "path": "data/train/part-00007.csv.zst",
+          "rows": 2778704,
+          "bytes": 860231535,
+          "sha256": "e024b93dd4d42b3b52361b064c7086e0edd3390d27cf80020f0e0ec0350bbb5e"
+        },
+        {
+          "path": "data/train/part-00008.csv.zst",
+          "rows": 2775394,
+          "bytes": 859246551,
+          "sha256": "a191d2ca7574aaa376006ff4e6acde71f0675d56d887a3d1cb75c27fef763de7"
+        },
+        {
+          "path": "data/train/part-00009.csv.zst",
+          "rows": 2772060,
+          "bytes": 858123103,
+          "sha256": "695ded5ebae3b2958703e61bc7c03f14cbf1afd60d8b62bd71eff4bbb7f03141"
+        },
+        {
+          "path": "data/train/part-00010.csv.zst",
+          "rows": 2771737,
+          "bytes": 858124107,
+          "sha256": "ffe6a5d5c8ff85c295485ba92ea0754405c7dda8200593b819fc05409745d6a4"
+        },
+        {
+          "path": "data/train/part-00011.csv.zst",
+          "rows": 2771615,
+          "bytes": 858129212,
+          "sha256": "835804b1e9adeff6cccbf269996944d55f66a6a89c044b19d157c05d70d6a7c0"
+        },
+        {
+          "path": "data/train/part-00012.csv.zst",
+          "rows": 2771736,
+          "bytes": 858111883,
+          "sha256": "f0688924410c48ae37d7e129ed9c0fa0279174f537f76c039941189640b29168"
+        },
+        {
+          "path": "data/train/part-00013.csv.zst",
+          "rows": 2771549,
+          "bytes": 858127494,
+          "sha256": "1591d048e8bc822256fff6b5629a893489439f592dfc3e05162fac04440b731b"
+        },
+        {
+          "path": "data/train/part-00014.csv.zst",
+          "rows": 2770941,
+          "bytes": 858143099,
+          "sha256": "a0ecacc5c780aa7633b8e9706fa72075b9da0753256aafa2565ef7ab161dd6a4"
+        },
+        {
+          "path": "data/train/part-00015.csv.zst",
+          "rows": 2770887,
+          "bytes": 858143153,
+          "sha256": "843fb2ec481a69b553cbb12fc61f71a93112a33209b6fd0b70ff6ff98ac04d3f"
+        },
+        {
+          "path": "data/train/part-00016.csv.zst",
+          "rows": 2772011,
+          "bytes": 858121397,
+          "sha256": "f3480f67b900853de9beb847da0c370165d33b43ab337b215ea06e8e706485ce"
+        },
+        {
+          "path": "data/train/part-00017.csv.zst",
+          "rows": 2770905,
+          "bytes": 858147912,
+          "sha256": "ba6da333926687755f1a303a7d30dd70d9260788179194568ab249c5a4171d28"
+        },
+        {
+          "path": "data/train/part-00018.csv.zst",
+          "rows": 2771650,
+          "bytes": 858099322,
+          "sha256": "4a9f83100fc266b63cdd194a54a5b6938841fa267fa2c8aecd2d4b97e81998cb"
+        },
+        {
+          "path": "data/train/part-00019.csv.zst",
+          "rows": 2771720,
+          "bytes": 858135856,
+          "sha256": "b993589103930d0dea66ffcad7ada854374f1ab98fce4d6b1ab2298e207143ae"
+        },
+        {
+          "path": "data/train/part-00020.csv.zst",
+          "rows": 2772578,
+          "bytes": 858112847,
+          "sha256": "208551fa248b84d447ef2f7c1333a42a510b3d13ef5211fc73c6536f7e71b264"
+        },
+        {
+          "path": "data/train/part-00021.csv.zst",
+          "rows": 2771326,
+          "bytes": 858130055,
+          "sha256": "c8d50825d4638c85135d1d6f1acf4e84556cb7ee269da9ac40e594ab8233bc26"
+        },
+        {
+          "path": "data/train/part-00022.csv.zst",
+          "rows": 2772002,
+          "bytes": 858113267,
+          "sha256": "2750cc666c70e1061b131ee13b0af1e208801208ef999f10b897145c23d0fcf9"
+        },
+        {
+          "path": "data/train/part-00023.csv.zst",
+          "rows": 2771273,
+          "bytes": 858125110,
+          "sha256": "7fefaa439e02dcaa0594a7a3e9f6b7add21cebf0260c709d725c6abb1c2b781e"
+        },
+        {
+          "path": "data/train/part-00024.csv.zst",
+          "rows": 2772498,
+          "bytes": 858111263,
+          "sha256": "6813c366664c72e7d74b2a182643d4b9e9d7fc018aaa7f9e8abaed701f696eec"
+        },
+        {
+          "path": "data/train/part-00025.csv.zst",
+          "rows": 2771461,
+          "bytes": 858128495,
+          "sha256": "a361b7c52d66253dda1890c48299dcb88c7f95e1f7a469620d6f503d693042ca"
+        },
+        {
+          "path": "data/train/part-00026.csv.zst",
+          "rows": 2771077,
+          "bytes": 858150506,
+          "sha256": "ac2dc24d8a36c34d85c4119ef549c4ecec0182be07ad38db497798f7fe4a5127"
+        },
+        {
+          "path": "data/train/part-00027.csv.zst",
+          "rows": 2771932,
+          "bytes": 858109749,
+          "sha256": "da7ffaf0cdcb5f30208754481bfb159858f4512ab3fa913e80bfa0a078975d4b"
+        },
+        {
+          "path": "data/train/part-00028.csv.zst",
+          "rows": 2771603,
+          "bytes": 858125869,
+          "sha256": "27ee8b138b367ba7537a9feca012ebecd1a9f0dc60af5b06a53f1707c2f385fd"
+        },
+        {
+          "path": "data/train/part-00029.csv.zst",
+          "rows": 2771017,
+          "bytes": 858124509,
+          "sha256": "ed6a99f32a5f89f279c953d13234127e5f5f5190e0fdd26810687f63bbaa0849"
+        },
+        {
+          "path": "data/train/part-00030.csv.zst",
+          "rows": 2772199,
+          "bytes": 858096757,
+          "sha256": "945442f49749917985d0a6d20af2f389217c44f23e784bedb74e42caea80186c"
+        },
+        {
+          "path": "data/train/part-00031.csv.zst",
+          "rows": 2771116,
+          "bytes": 858133228,
+          "sha256": "cd1ccc2a9c781a89344596f73f9778ff90291d66bf61f272c1d09beff46a8d97"
+        },
+        {
+          "path": "data/train/part-00032.csv.zst",
+          "rows": 2772131,
+          "bytes": 858128259,
+          "sha256": "f6e5ea28ebbd31b4572a9afb10a9a26817d36b7957ba97a3ca274653e40225ce"
+        },
+        {
+          "path": "data/train/part-00033.csv.zst",
+          "rows": 2772290,
+          "bytes": 858111913,
+          "sha256": "ec2884b134573cddaf67cb2131fdbe5a55f6bfb135d99078a036e1ef5994217b"
+        },
+        {
+          "path": "data/train/part-00034.csv.zst",
+          "rows": 2771732,
+          "bytes": 858132056,
+          "sha256": "6afe1cc1c27d62cb64e5ab9382ee82faf006d7e53a8f2691734e008ace787805"
+        },
+        {
+          "path": "data/train/part-00035.csv.zst",
+          "rows": 2772083,
+          "bytes": 858102389,
+          "sha256": "0ad3336414de5b129a07caa8a9dab0c663b994557efcfa2e842a3890bfe3ccc6"
+        },
+        {
+          "path": "data/train/part-00036.csv.zst",
+          "rows": 2771628,
+          "bytes": 858123660,
+          "sha256": "7c149d957cfcd02ba8f9fc0652de0151cfd51f0ddc3cff8dd8ff21ef7705bc01"
+        },
+        {
+          "path": "data/train/part-00037.csv.zst",
+          "rows": 2771530,
+          "bytes": 858142714,
+          "sha256": "029bd66e072fb6be7320134ed535e127c9bd5300c5c67e26a839885484ffa3f5"
+        },
+        {
+          "path": "data/train/part-00038.csv.zst",
+          "rows": 2807203,
+          "bytes": 856577656,
+          "sha256": "cf2e04877f504bea21aa78b3219de52fd9d711a353231cbd1ff6d6ba55b3d9ee"
+        },
+        {
+          "path": "data/train/part-00039.csv.zst",
+          "rows": 2924016,
+          "bytes": 848734227,
+          "sha256": "443f39325a8fa29db085aac61abc05cd2c23bc5667d8943a3215ae4c25c3895f"
+        },
+        {
+          "path": "data/train/part-00040.csv.zst",
+          "rows": 2923254,
+          "bytes": 848459563,
+          "sha256": "c0489c96fc5068cc539e0f35ec5ad452dd8b1f69b4f8d11ce29f264e794c6a5f"
+        },
+        {
+          "path": "data/train/part-00041.csv.zst",
+          "rows": 2923291,
+          "bytes": 848470950,
+          "sha256": "d28ab84e7bb6c62ad03def3a5e8b9fa34d7bf62ba3efee94ea70191d3ebfa565"
+        },
+        {
+          "path": "data/train/part-00042.csv.zst",
+          "rows": 2916658,
+          "bytes": 846660341,
+          "sha256": "274e28495a25cfea62a1b6831d429051e26aa74ba395f5ba54082aa72f8f2267"
+        },
+        {
+          "path": "data/train/part-00043.csv.zst",
+          "rows": 2914782,
+          "bytes": 846387722,
+          "sha256": "367991d5a554d26856ac0911e28a162566dbb224e18c392e69765a8764326e7e"
+        },
+        {
+          "path": "data/train/part-00044.csv.zst",
+          "rows": 2915088,
+          "bytes": 846294161,
+          "sha256": "55f57ba7cc8f5ae24050c52584610c5e792f673b883044174737d3b01f87e48e"
+        },
+        {
+          "path": "data/train/part-00045.csv.zst",
+          "rows": 2914975,
+          "bytes": 846382286,
+          "sha256": "c239d4aa366ca685503cc364428b6285439cb3307c73117127fa9b5d6fbf6435"
+        },
+        {
+          "path": "data/train/part-00046.csv.zst",
+          "rows": 2915032,
+          "bytes": 846331761,
+          "sha256": "98587756ea241c31b9707058fd36dbb7b312bfdca7e557ab84b8c979aef1411b"
+        },
+        {
+          "path": "data/train/part-00047.csv.zst",
+          "rows": 2915216,
+          "bytes": 846352781,
+          "sha256": "c9da37f453eb427b1c93d5ddd99ef7665dff2f045e1ae76d346397f27cc562d3"
+        },
+        {
+          "path": "data/train/part-00048.csv.zst",
+          "rows": 2914692,
+          "bytes": 846340633,
+          "sha256": "372d1c11f9cf7e83510a5772de3e8364b0c78422e8e1360b66f83f358492d1bd"
+        },
+        {
+          "path": "data/train/part-00049.csv.zst",
+          "rows": 2914787,
+          "bytes": 846381112,
+          "sha256": "489dfbc8eb2239dde5366b2c378c005b2c48e18a91881cbf500f514fdc47dcb9"
+        },
+        {
+          "path": "data/train/part-00050.csv.zst",
+          "rows": 2914866,
+          "bytes": 846353694,
+          "sha256": "d5afd1ae2db9dd0866fc03be8330e9e1ee0aaed7a3f5c653f7ab9dd4cf0c994c"
+        },
+        {
+          "path": "data/train/part-00051.csv.zst",
+          "rows": 2914672,
+          "bytes": 846374824,
+          "sha256": "8fd14a736fc611d213852eacc5cfc9c056b4592f1fcac6a9b9914505c6c55047"
+        },
+        {
+          "path": "data/train/part-00052.csv.zst",
+          "rows": 2915016,
+          "bytes": 846352610,
+          "sha256": "cdcba85786b5cc2957396037fe286a16d3ce6324827aa0091e47186733cc8f6f"
+        },
+        {
+          "path": "data/train/part-00053.csv.zst",
+          "rows": 2914624,
+          "bytes": 846488859,
+          "sha256": "25b0ffe759df2ca9db0dd714f041cba8a04f0ebcd499de77ad4a6cd59b661016"
+        },
+        {
+          "path": "data/train/part-00054.csv.zst",
+          "rows": 2914704,
+          "bytes": 846374871,
+          "sha256": "e71908287911b176f7e52f65647a087ead5dd669e02b64c0d2d0388be7f7adf6"
+        },
+        {
+          "path": "data/train/part-00055.csv.zst",
+          "rows": 2914234,
+          "bytes": 846419802,
+          "sha256": "d88ed7162212cc9574a87799a422e5bac1fae49f04e9365be6605798bbd4a775"
+        },
+        {
+          "path": "data/train/part-00056.csv.zst",
+          "rows": 2914587,
+          "bytes": 846364947,
+          "sha256": "ecb646b861e90ec381c389c7d7fae4e17f34cb94b160f80a37ac8635bf44c6b6"
+        },
+        {
+          "path": "data/train/part-00057.csv.zst",
+          "rows": 2914507,
+          "bytes": 846416736,
+          "sha256": "de7fa08e5e97d10902a6fd145a2331988010c41d16e147067060d96c679ff005"
+        },
+        {
+          "path": "data/train/part-00058.csv.zst",
+          "rows": 2914599,
+          "bytes": 846424579,
+          "sha256": "f538d57b085b59ec69ada3194f322e0bc54d1b65a815ed6e5c4802c9eb92e765"
+        },
+        {
+          "path": "data/train/part-00059.csv.zst",
+          "rows": 2914188,
+          "bytes": 846411798,
+          "sha256": "18ce5c62131cf17674ab26e611db1819dc01400f1324a99e37ef3b93c70f8fed"
+        },
+        {
+          "path": "data/train/part-00060.csv.zst",
+          "rows": 2914536,
+          "bytes": 846397895,
+          "sha256": "dc4d5da96f651cfc167b56284d3a6b4b706533e34d01a135ead31337027c47d2"
+        },
+        {
+          "path": "data/train/part-00061.csv.zst",
+          "rows": 2914526,
+          "bytes": 846491905,
+          "sha256": "f366b8bd6fdcce217a02c73651d5fd7fce37e2fe9137173c2b37d6f42ee8de88"
+        },
+        {
+          "path": "data/train/part-00062.csv.zst",
+          "rows": 2913893,
+          "bytes": 846482264,
+          "sha256": "1846276381de4c994eac0d26c038f974e1ad66aa5157e32f1a0a1f9bb474630a"
+        },
+        {
+          "path": "data/train/part-00063.csv.zst",
+          "rows": 2928754,
+          "bytes": 846741365,
+          "sha256": "e6e679ec9c93174219f3e9e62c490f4f394223ac5a50f5cd2eb0d69e15abc797"
+        },
+        {
+          "path": "data/train/part-00064.csv.zst",
+          "rows": 3067865,
+          "bytes": 846858363,
+          "sha256": "16790bc0a5548fca661c17c951ba2bc814b6ebe6e1b1e75d4b00f5b3746c3146"
+        },
+        {
+          "path": "data/train/part-00065.csv.zst",
+          "rows": 3066022,
+          "bytes": 846357191,
+          "sha256": "8d79190f76f105d604c5b3922a538647e92d2c3ce86534eba8bd6487d608e288"
+        },
+        {
+          "path": "data/train/part-00066.csv.zst",
+          "rows": 2276007,
+          "bytes": 628128493,
+          "sha256": "d2aee9f32de26642b09b12ac8e711aeaa3a3a239c4080b98273946b964f35225"
+        }
+      ]
+    },
+    {
+      "split": "validation",
+      "source_file": "merged_val.csv",
+      "source_bytes": 1414376467,
+      "source_sha256": "535a599591f2d1b9737dd77807fdbb93e7e231503575c05c35b0b9f6c242c9f7",
+      "rows": 1802906,
+      "shards": [
+        {
+          "path": "data/validation/part-00000.csv.zst",
+          "rows": 1802906,
+          "bytes": 564673306,
+          "sha256": "f9b965a75a3b76cddc3cdcf3790d6e0aaec96ca9319a1b7e2768b5927762d222"
+        }
+      ]
+    },
+    {
+      "split": "test",
+      "source_file": "merged_test.csv",
+      "source_bytes": 4009545439,
+      "source_sha256": "089c2afd4af973b77e7a894d2eda04544afff5c9e5530e47d6d00aaa999e0211",
+      "rows": 5553421,
+      "shards": [
+        {
+          "path": "data/test/part-00000.csv.zst",
+          "rows": 2904131,
+          "bytes": 824081853,
+          "sha256": "90904efbbe1a231832044a50e09a17318f8b837fc3787f2d5e59f350c6502c49"
+        },
+        {
+          "path": "data/test/part-00001.csv.zst",
+          "rows": 2649290,
+          "bytes": 697262956,
+          "sha256": "8e0558fd7124c6eacf36901d842a0cc7b0269339dd7678fa8a1e26d4ec360639"
+        }
+      ]
+    }
+  ]
+}

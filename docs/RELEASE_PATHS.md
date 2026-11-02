@@ -48,7 +48,12 @@ shuffle; training uses seeded permutations. Hashes and checks are in
 [FINAL_PIPELINE.md](../data_collection/FINAL_PIPELINE.md).
 
 Hugging Face target: https://huggingface.co/datasets/FilyaGeikyan/CoordToken-data.
-The new upload is pending. Local staging and progress:
+Compression is complete: 70 Zstandard CSV shards (67 train, one validation,
+and two test), totaling 58,980,050,447 bytes (58.98 GB). All compressed-shard
+SHA-256 hashes were rechecked on 2026-11-02. Source hashes, row counts and shard
+metadata are recorded in [the package manifest](dataset_package_manifest.json).
+The data have not been uploaded; public publication awaits explicit confirmation.
+Local staging and progress:
 `/mnt/weka/fgeikyan/CoordToken/artifacts/huggingface_release_20261101/`.
 Only a `publication.json` with `status: published_verified` plus the matching
 remote revision establishes upload completion.
